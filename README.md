@@ -1,114 +1,70 @@
-# Quer ser desenvolvedor frontend na Webjump?
-Criamos este teste para avaliar seus conhecimentos e habilidades frontend (HTML, CSS e JavaScript).
+# Getting Started with Create React App
 
-## O teste
-O desafio é tornar o layout abaixo em uma página funcional.  
-Não existe certo ou errado, queremos ver como você se sai em situações reais, como este desafio.   
-O tempo necessário para completar o desafio dependerá da sua experiência e ferramentas escolhidas.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Portanto, dê o seu melhor!
+## Available Scripts
 
-:warning: **OBS:** Os layouts podem ser encontrados na pasta **layout**
+In the project directory, you can run:
 
-![Layout](assets/preview.jpg)
+### `yarn start`
 
-## Instruções
-- Os arquivos do layout estão no diretório assets deste repositório
-- O conteúdo não é estático. Você deve criar um JavaScript para consultar a lista de categorias a serem exibidas no menu e também para exibir os produtos das categorias.  
-Os dados serão fornecidos por uma API. As instruções estão mais abaixo.
-- Fonte padrão: "Open Sans"
-- Fonte do menu e botão de busca: "Open Sans - Extrabold"
-- As imagens dos produtos estão no diretório public/media
-- Você pode utilizar as tecnologias e bibliotecas que achar melhor (frameworks ou bibliotecas JS / CSS)
-- Crie uma documentação simples comentando sobre as tecnologias e soluções adotadas
-- Se necessário explique também como rodar o seu projeto
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Requisitos
-- Design responsivo nos breakpoints 320px, 768px, 1024px e 1440px
-- Suporte para IE, Chrome, Safari, Firefox
-- Semântica
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Diferenciais
-- Uso de pré-processadores CSS (Sass, Less)
-- Acessibilidade
-- SEO
-- Performance
-- Fazer os filtros da sidebar funcionarem através de Javascript
-- Utilizar alguma automatização (Grunt, Gulp, ...)
+### `yarn test`
 
-## O que será avaliado
-- Estrutura e organização do código e dos arquivos
-- Soluções adotadas
-- Tecnologias utilizadas
-- Qualidade
-- Fidelidade ao layout
-- Enfim, tudo será observado e levado em conta
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Como iniciar o desenvolvimento
-- Instale o [npm](https://nodejs.org/en/download/)
-- Fork este repositório na sua conta do Bitbucket
-- Crie uma branch com o nome **desafio**
-- Instale as dependências
-```
-npm install
-```
-- Rode a aplicação
-```
-npm start
-```
-- Acesse http://localhost:8888
-- Realize o desenvolvimento na pasta public
+### `yarn build`
 
-## Como enviar seu teste
-- Envie um email para [carreira@webjump.com.br] com o link do seu repositório
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-- Se o seu repositório for privado, solicite os emails das pessoas responsáveis para conceder acesso de leitura ao seu repositório.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## API
-- Categorias: http://localhost:8888/api/V1/categories/list  
-O endpoint de categoria deve ser utilizado para montar o menu do cabeçalho.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-**Response**
-```
-{
-  "items": [
-    {
-      "id": 1,
-      "name": "Camisetas",
-      "path": "camisetas"
-    },
-    ...
-  ]
-}
-```
+### `yarn eject`
 
-- Produtos da Categoria: http://localhost:8888/api/V1/categories/{id}  
-O endpoint de produtos da categoria deve ser consumido para listar os produtos da categoria quando o usuário clicar em um dos menus.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-**Response**
-```
-{
-  "filters": [
-      {
-          "color": "Cor"
-      }
-  ],
-  "items": [
-    {
-      "id": 31,
-      "sku": "sku-31",
-      "path": "tenis-preto-couro",
-      "name": "Tênis Preto Couro",
-      "image": "media/shoes-1.jpg",
-      "price": 129.9,
-      "specialPrice": 80, //Optional
-      "filter": [
-        {
-          "color": "Preta"
-        }
-      ]
-    },
-    ...
-  ]
-}
-```
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
