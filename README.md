@@ -12,7 +12,7 @@ Portanto, dê o seu melhor!
 
 :warning: **OBS:** Os layouts podem ser encontrados na pasta **layout**
 
-![Layout](assets/preview.jpg)
+![Layout](public/assets/preview.jpg)
 
 ## Instruções
 
