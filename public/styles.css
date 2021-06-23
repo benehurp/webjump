@@ -4,6 +4,7 @@
   --red-dark: #9f000f;
   --clean: #fff;
   --black: #000;
+  --gray-1: #e2dedb;
 }
 * {
   margin: 0;
@@ -11,9 +12,7 @@
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
-a {
-  text-decoration: none;
-}
+
 ul {
   list-style: none;
 }
@@ -21,11 +20,16 @@ ul {
   display: grid;
   grid-template-columns: 1fr minmax(320px, 1440px) 1fr;
 }
-body {
-  background-color: aqua;
-}
 html {
   font-size: 62.5%;
+}
+p {
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+h1 {
+  font-size: 3rem;
+  padding: 3rem 0;
 }
 /* HEADER ........................................ */
 header {
@@ -47,24 +51,78 @@ header {
   padding: 0.8rem;
   text-align: right;
 }
-menu {
+/* MENU ........................................ */
+nav.menuHeader {
   background-color: var(--red);
 }
-menu ul {
+nav.menuHeader ul {
   display: flex;
   height: 5rem;
   align-items: center;
   text-transform: uppercase;
 }
-menu ul li {
-  padding: 1.2rem;
+nav.menuHeader ul li {
+  padding: 2rem;
   font-size: 1.8rem;
   color: var(--clean);
   font-weight: 600;
 }
-menu ul li:nth-child(n + 2) {
+nav.menuHeader ul li:nth-child(n + 2) {
   margin-left: 3rem;
 }
-menu ul li:hover {
-  background-color: var(--red-dark);
+nav.menuHeader ul li:hover {
+  cursor: pointer;
+}
+/* SIDEBAR & MENU ........................................ */
+.main {
+  grid-column: 2/3;
+  display: flex;
+  padding: 2rem;
+  gap: 20px;
+}
+.menuSidebar {
+  background-color: var(--gray-1);
+  width: 25rem;
+  height: 100%;
+}
+nav.menuSidebar {
+  color: var(--black);
+  font-size: 2rem;
+}
+.menuSidebar nav ul {
+  padding: 2rem;
+}
+.menuSidebar nav ul li {
+  padding: 1rem;
+  font-size: 2rem;
+}
+/* SECTION PRINCIPAL ........................................ */
+section {
+  width: 100%;
+}
+.banner {
+  background-image: url(assets/bannerWebJump.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 22rem;
+}
+/* FOOTER ........................................ */
+footer {
+  color: var(--clean);
+  grid-column: 2/3;
+  height: 20rem;
+  background-color: var(--red);
+}
+
+/* BOTÕES, INPUTS & DERIVADOS ........................................ */
+input {
+  width: 50rem;
+  padding: 1rem;
+}
+button {
+  background-color: var(--red);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--clean);
+  width: 10rem;
 }
