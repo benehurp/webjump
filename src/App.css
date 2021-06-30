@@ -11,6 +11,11 @@
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 ul {
@@ -19,10 +24,9 @@ ul {
 #root {
   display: grid;
   grid-template-columns: 1fr minmax(320px, 1440px) 1fr;
+  background-color: cornsilk;
 }
-html {
-  font-size: 62.5%;
-}
+
 p {
   font-size: 1.5rem;
   line-height: 3rem;
@@ -31,77 +35,92 @@ h1 {
   font-size: 3rem;
   padding: 3rem 0;
 }
+.x-gap {
+  width: 100%;
+  display: block;
+}
 /* HEADER ........................................ */
 header {
   grid-column: 2/3;
   background-color: var(--clean);
 }
-.headerContainer {
+
+.header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 12rem;
   margin: 0 2rem;
 }
-.loginBar {
+.login-bar {
   grid-column: 2/3;
   background-color: var(--black);
   color: var(--clean);
   font-size: 1.4rem;
-  padding: 0.8rem;
+  padding: 1rem 2rem;
   text-align: right;
 }
 /* MENU ........................................ */
-nav.menuHeader {
+
+.menu-header {
   background-color: var(--red);
 }
-nav.menuHeader ul {
+.menu-header ul {
   display: flex;
+  margin-left: 2rem;
   height: 5rem;
   align-items: center;
   text-transform: uppercase;
 }
-nav.menuHeader ul li {
-  padding: 2rem;
-  font-size: 1.8rem;
-  color: var(--clean);
+.menu-header ul li {
+  padding: 1.3rem 2rem;
+  font-size: 1.6rem;
   font-weight: 600;
+  color: var(--clean);
 }
-nav.menuHeader ul li:nth-child(n + 2) {
-  margin-left: 3rem;
+
+.menu-header ul li:hover {
+  background-color: var(--red-dark);
 }
-nav.menuHeader ul li:hover {
-  cursor: pointer;
+
+.link-menu-ativo {
+  background-color: var(--red-dark);
+  text-decoration: none;
+  color: var(--clean);
 }
+
 /* SIDEBAR & MENU ........................................ */
 .main {
   grid-column: 2/3;
   display: flex;
   padding: 2rem;
-  gap: 20px;
+  gap: 2rem;
+  background-color: var(--clean);
 }
-.menuSidebar {
+.menu-sidebar {
   background-color: var(--gray-1);
   width: 25rem;
   height: 100%;
 }
-nav.menuSidebar {
+.menu-sidebar {
   color: var(--black);
   font-size: 2rem;
 }
-.menuSidebar nav ul {
+.menu-sidebar nav ul {
   padding: 2rem;
 }
-.menuSidebar nav ul li {
+.menu-sidebar nav ul li {
   padding: 1rem;
   font-size: 2rem;
+}
+.menu-sidebar nav ul li:hover {
+  background-color: var(--clean);
 }
 /* SECTION PRINCIPAL ........................................ */
 section {
   width: 100%;
 }
 .banner {
-  background-image: url(assets/bannerWebJump.jpg);
+  background-image: url(./components/layout/bannerWebJump.jpg);
   background-size: cover;
   width: 100%;
   height: 22rem;
@@ -114,15 +133,61 @@ footer {
   background-color: var(--red);
 }
 
-/* BOTÕES, INPUTS & DERIVADOS ........................................ */
 input {
-  width: 50rem;
+  width: 100%;
+  min-width: 25rem;
+  max-width: 50rem;
   padding: 1rem;
+  border: 1px solid #000;
+  outline: none;
 }
+input:hover {
+  border: 1px solid var(--red);
+}
+
 button {
   background-color: var(--red);
   padding: 1rem;
   font-weight: 600;
   color: var(--clean);
   width: 10rem;
+  cursor: pointer;
+  border: 0;
+}
+button:hover {
+  background-color: var(--red-dark);
+}
+.search-bar {
+  display: flex;
+  width: 100%;
+}
+.search-icon {
+  width: 8rem;
+  fill: var(--red);
+  margin-left: 2rem;
+  cursor: pointer;
+}
+.search-icon:hover {
+  fill: var(--red-dark);
+}
+.menu-icon {
+  width: 8rem;
+  fill: var(--black);
+  margin-right: 3rem;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 502px) {
+  .menu-header {
+    display: none;
+  }
+  .menu-sidebar {
+    display: none;
+  }
+  .search-bar {
+    display: none;
+  }
+  .login-bar {
+    text-align: center;
+  }
 }
