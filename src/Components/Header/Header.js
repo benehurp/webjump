@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { MenuIconSVG } from './layout/MenuIconSVG';
-import { SearchIconSVG } from './layout/SearchIconSVG';
-import { Logo } from './layout/Logo';
-import { NavMenu } from './NavMenu/NavMenu';
-import { SearchBar } from './SearchBar';
+
+import { HeaderLogo } from './HeaderLogo';
+import { HeaderSearchIconSVG } from './HeaderSearchIconSVG';
+import { HeaderMenuIconSVG } from './HeaderMenuIconSVG';
+import { SearchBar } from './../SearchBar';
+import { NavMenu } from '../NavMenu/NavMenu';
 
 export const Header = () => {
   return (
@@ -18,11 +19,11 @@ export const Header = () => {
         </Link>
       </div>
       <div className="header-container">
-        <MenuIconSVG />
-        <Logo />
+        <HeaderMenuIconSVG />
+        <HeaderLogo />
         <div className="x-gap"></div>
         <SearchBar />
-        <SearchIconSVG />
+        <HeaderSearchIconSVG />
       </div>
       <NavMenu className="menu-header" activeClassName="link-menu-ativo" />
     </header>

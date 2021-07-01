@@ -87,15 +87,8 @@ header {
   text-decoration: none;
   color: var(--clean);
 }
+/* SIDEBAR & MENUS ........................................ */
 
-/* SIDEBAR & MENU ........................................ */
-.main {
-  grid-column: 2/3;
-  display: flex;
-  padding: 2rem;
-  gap: 2rem;
-  background-color: var(--clean);
-}
 .menu-sidebar {
   background-color: var(--gray-1);
   width: 25rem;
@@ -115,12 +108,32 @@ header {
 .menu-sidebar nav ul li:hover {
   background-color: var(--clean);
 }
-/* SECTION PRINCIPAL ........................................ */
+/* NAVIGATION ........................................ */
+.navigation {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.navigation-point {
+  color: var(--red);
+}
+/* FILTERS SIDEBAR ........................................ */
+.filter-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+/* CONTENT & SECTION  ........................................ */
+.content {
+  grid-column: 2/3;
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--clean);
+}
 section {
   width: 100%;
 }
 .banner {
-  background-image: url(./components/layout/bannerWebJump.jpg);
+  background-image: url(./Pages/Home/bannerWebJump.jpg);
   background-size: cover;
   width: 100%;
   height: 22rem;
