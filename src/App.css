@@ -5,6 +5,11 @@
   --clean: #fff;
   --black: #000;
   --gray-1: #e2dedb;
+  --gray-2: #808185;
+  --color-1: #cc0d1f;
+  --color-2: #f36324;
+  --color-3: #28a3aa;
+  --grid-size: 1fr minmax(320px, 1024px) 1fr;
 }
 * {
   margin: 0;
@@ -23,8 +28,7 @@ ul {
 }
 #root {
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 1440px) 1fr;
-  background-color: cornsilk;
+  grid-template-columns: var(--grid-size);
 }
 
 p {
@@ -39,13 +43,56 @@ h1 {
   width: 100%;
   display: block;
 }
-/* HEADER ........................................ */
-header {
-  grid-column: 2/3;
-  background-color: var(--clean);
+.flex-line {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
+/* INPUTS, BUTTONS, SELECTS & ETC ........................................ */
+input {
+  width: 100%;
+  min-width: 25rem;
+  max-width: 50rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  outline: none;
+}
+input:hover {
+  border: 1px solid var(--red);
+}
+
+button {
+  background-color: var(--red);
+  padding: 1rem;
+  font-weight: 600;
+  color: var(--clean);
+  width: 10rem;
+  cursor: pointer;
+  border: 0;
+}
+button:hover {
+  background-color: var(--red-dark);
+}
+select {
+  font-size: 1rem;
+  padding: 0.4rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+}
+/* HEADER ........................................ */
+header {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: var(--grid-size);
+}
 .header-container {
+  grid-column: 2/3;
+}
+
+.header-content {
   display: flex;
   align-items: center;
   height: 12rem;
@@ -91,12 +138,10 @@ header {
 
 .menu-sidebar {
   background-color: var(--gray-1);
-  width: 25rem;
-  height: 100%;
-}
-.menu-sidebar {
   color: var(--black);
   font-size: 2rem;
+  width: 25rem;
+  height: 100%;
 }
 .menu-sidebar nav ul {
   padding: 2rem;
@@ -108,18 +153,122 @@ header {
 .menu-sidebar nav ul li:hover {
   background-color: var(--clean);
 }
-/* NAVIGATION ........................................ */
+/* FILTERS SIDEBAR ........................................ */
+.filter-sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: 100%;
+}
+.filter-sidebar {
+  border: 1px solid var(--gray-1);
+  font-size: 1.5rem;
+  color: var(--black);
+  padding: 1.2rem;
+}
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  border-top: 1px solid var(--gray-1);
+  border-bottom: 1px solid var(--gray-1);
+  margin-bottom: 2rem;
+}
+.filter-list-categories {
+  color: var(--black);
+  margin: 1rem 0 0 1.5rem;
+  list-style: circle;
+}
+.filter-list-categories:hover {
+  color: var(--red);
+}
+.filter-list-type {
+  color: var(--black);
+  margin: 1rem 0 0 1.5rem;
+  list-style: circle;
+}
+
+.view-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 6rem;
+}
+.view-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  fill: var(--gray-2);
+  cursor: pointer;
+}
+.view-icon:hover {
+  opacity: 0.8;
+}
+.view-icon-ativo {
+  fill: var(--color-3);
+}
+.filter-description {
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+h1.title-product {
+  font-weight: 400;
+  color: var(--red);
+}
+h2.filter-title {
+  color: var(--red);
+}
+h3.filter-subtitle {
+  margin: 1rem 0;
+  color: var(--color-3);
+}
+.color-pick {
+  display: flex;
+  width: 100%;
+  gap: 2px;
+}
+.color-pick li {
+  width: 33.33%;
+  height: 3rem;
+  background-color: var(--color-1);
+}
+.color-pick li:hover {
+  border: 2px solid var(--gray-1);
+}
+/* PRODUCTS ........................................ */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 16rem);
+  gap: 2rem;
+  justify-content: space-between;
+}
+.products li {
+  text-align: center;
+  text-transform: uppercase;
+  width: 16rem;
+  height: 35rem;
+}
+
+.product-img {
+  width: 16rem;
+  height: 18rem;
+  border: 1px solid var(--gray-1);
+}
+.product-title {
+  margin: 1rem;
+  line-height: 2rem;
+  display: inline-block;
+  word-wrap: break-word;
+}
+/* BREADCRUMBS (NAVIGATION INFO) ........................................ */
 .navigation {
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 .navigation-point {
   color: var(--red);
-}
-/* FILTERS SIDEBAR ........................................ */
-.filter-sidebar {
-  display: flex;
-  flex-direction: column;
 }
 /* CONTENT & SECTION  ........................................ */
 .content {
@@ -146,30 +295,16 @@ footer {
   background-color: var(--red);
 }
 
-input {
-  width: 100%;
-  min-width: 25rem;
-  max-width: 50rem;
-  padding: 1rem;
-  border: 1px solid #000;
-  outline: none;
+.search-icon:hover {
+  fill: var(--red-dark);
 }
-input:hover {
-  border: 1px solid var(--red);
+.menu-icon {
+  width: 8rem;
+  fill: var(--black);
+  margin-right: 3rem;
+  cursor: pointer;
 }
 
-button {
-  background-color: var(--red);
-  padding: 1rem;
-  font-weight: 600;
-  color: var(--clean);
-  width: 10rem;
-  cursor: pointer;
-  border: 0;
-}
-button:hover {
-  background-color: var(--red-dark);
-}
 .search-bar {
   display: flex;
   width: 100%;
@@ -178,15 +313,6 @@ button:hover {
   width: 8rem;
   fill: var(--red);
   margin-left: 2rem;
-  cursor: pointer;
-}
-.search-icon:hover {
-  fill: var(--red-dark);
-}
-.menu-icon {
-  width: 8rem;
-  fill: var(--black);
-  margin-right: 3rem;
   cursor: pointer;
 }
 

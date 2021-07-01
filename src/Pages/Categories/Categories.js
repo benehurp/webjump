@@ -2,6 +2,9 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { UserContext } from './../../UserContext';
 import { MenuSidebar } from '../../Components/MenuSidebar/MenuSidebar';
+import { GridIconSVG } from './CategoriesIcons/GridIconSVG';
+import { ListIconSVG } from './CategoriesIcons/ListIconSVG';
+import { CategoriesNavMenu } from './CategoriesNavMenu';
 
 export const Categories = () => {
   const { categories } = React.useContext(UserContext);
@@ -47,48 +50,58 @@ export const Categories = () => {
 
   return (
     <div className="content">
-      <div className="container-menu-sidebar">
+      <div className="filter-sidebar-container">
         <p className="navigation">
-          Página inicial &gt; <span className="navigation-point">{nav}</span>
+          Página inicial » <span className="navigation-point">{nav}</span>
         </p>
-        <div className="menu-sidebar">
-          <h2>Filtre por</h2>
-          <h3>Categoria</h3>
+        <div className="filter-sidebar">
+          <h2 className="filter-title">FILTRE POR</h2>
+          <h3 className="filter-subtitle">CATEGORIAS</h3>
           <ul>
-            <li>Roupas</li>
-            <li>Sapatos</li>
-            <li>Acessórios</li>
+            <CategoriesNavMenu />
           </ul>
-          <h3>Cores</h3>
-          <div className="color-pik">
-            <ul>
-              <li>A</li>
-              <li>B</li>
-              <li>C</li>
-            </ul>
-          </div>
-          <h3>Tipo</h3>
-          <ul>Corrida</ul>
-          <ul>Caminhada</ul>
-          <ul>Casual</ul>
-          <ul>Social</ul>
+          <h3 className="filter-subtitle">Cores</h3>
+          <ul className="color-pick">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <h3 className="filter-subtitle">Tipo</h3>
+          <ul>
+            <li className="filter-list-categories">Corrida</li>
+            <li className="filter-list-categories">Caminhada</li>
+            <li className="filter-list-categories">Casual</li>
+            <li className="filter-list-categories">Social</li>
+          </ul>
         </div>
       </div>
       <section>
-        <h1>Sapatos</h1>
+        <h1 className="title-product">{nav}</h1>
         <div className="filters">
-          <div className="display-grid"></div>
-          <div className="display-list"></div>
-          <p>Ordenar por</p>
-          <select name="" id="">
-            <option value="preco">Preço</option>
-          </select>
+          <div className="view-icons-container">
+            <div className="view-grid">
+              <GridIconSVG />
+            </div>
+            <div className="view-list">
+              <ListIconSVG />
+            </div>
+          </div>
+          <div className="flex-line">
+            <p className="filter-description">ORDENAR POR</p>
+            <select name="" id="">
+              <option value="preco">Preço</option>
+            </select>
+          </div>
         </div>
-        <ul>
-          <li>A</li>
-          <li>B</li>
-          <li>C</li>
-          <li>D</li>
+        <ul className="products">
+          {products.items.map(({ id, image, name, price }) => (
+            <li key={id}>
+              <img className="product-img" src={image} alt={name} />
+              <p className="product-title">{name}</p>
+              <p className="product-price">{`R$ ${price}`}</p>
+              <button className="product-buy">COMPRAR</button>
+            </li>
+          ))}
         </ul>
       </section>
     </div>

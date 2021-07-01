@@ -9,23 +9,25 @@ import { NavMenu } from '../NavMenu/NavMenu';
 export const Header = () => {
   return (
     <header>
-      <div className="login-bar">
-        <Link to="/">
-          <b>Acesse sua Conta</b>
-        </Link>{' '}
-        ou{' '}
-        <Link to="/">
-          <b>Cadastre-se</b>
-        </Link>
-      </div>
       <div className="header-container">
-        <HeaderMenuIconSVG />
-        <HeaderLogo />
-        <div className="x-gap"></div>
-        <SearchBar />
-        <HeaderSearchIconSVG />
+        <div className="login-bar">
+          <Link to="/">
+            <b>Acesse sua Conta</b>
+          </Link>{' '}
+          ou{' '}
+          <Link to="/">
+            <b>Cadastre-se</b>
+          </Link>
+        </div>
+        <div className="header-content">
+          <HeaderMenuIconSVG />
+          <HeaderLogo />
+          <div className="x-gap"></div>
+          <SearchBar />
+          <HeaderSearchIconSVG />
+        </div>
+        <NavMenu className="menu-header" activeClassName="link-menu-ativo" />
       </div>
-      <NavMenu className="menu-header" activeClassName="link-menu-ativo" />
     </header>
   );
 };
