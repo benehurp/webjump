@@ -12,14 +12,6 @@ export const UserStorage = ({ children }) => {
   const [gender, setGender] = React.useState(null);
   const [select, setSelect] = React.useState(null);
 
-  //   const filterColor = React.useCallback(
-  //     async function () {
-  //       return products.items[1]
-  // .filter((item) => item.path === params).map((e) => e.id);
-  //     },
-  //     [id],
-  //   );
-
   React.useEffect(() => {
     async function apiFetch(url1, url2) {
       try {
@@ -37,26 +29,6 @@ export const UserStorage = ({ children }) => {
       }
     }
     apiFetch(`./api/V1/categories/list`, `./api/V1/categories/${params}`);
-
-    function filtersItems() {
-      if (params === 1) {
-        setColors(['Preta', 'Laranja', 'Amarela', 'Rosa']);
-      } else if (params === 2) {
-        setGender(['Masculino', 'Feminino']);
-      }
-      if (params === 3) {
-        setColors([
-          'Preta',
-          'Laranja',
-          'Amarela',
-          'Cinza',
-          'Azul',
-          'Preto',
-          'Bege',
-        ]);
-      }
-    }
-    filtersItems();
   }, [params]);
 
   const data = {
@@ -79,7 +51,26 @@ export const UserStorage = ({ children }) => {
           .map((color) => color);
       }
     },
+    filterGender: () => {
+      if (products) {
+        return products.items
+          .filter(({ filter: [{ gender }] }) => gender === select)
+          .map((gender) => gender);
+      }
+    },
+    listGender: () => {
+      if (products) {
+        return products.items
+          .filter((e) => e.filter)
+          .map(({ id, filter: [{ gender }] }) => gender);
+      }
+    },
     listAll: () => {
+      if (products) {
+        return products.items.filter((items) => items);
+      }
+    },
+    listAll2: () => {
       if (products) {
         return products.items.filter((items) => items);
       }

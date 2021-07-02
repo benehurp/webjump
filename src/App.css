@@ -242,7 +242,12 @@ h3.filter-subtitle {
 .color-pick li {
   width: 4rem;
   height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  font-weight: 600;
+  background-color: aliceblue;
 }
 
 .color-pick li:hover {

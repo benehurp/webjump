@@ -2,19 +2,34 @@ import React from 'react';
 import { UserContext } from './../../UserContext';
 
 export const CategoriesResults = () => {
-  const { data, color, select, setSelect, products } =
+  const { setSelect, select, data, params, setParams } =
     React.useContext(UserContext);
-  const [execute, setExecute] = React.useState(data.listAll());
+
   const [listColors, setListColors] = React.useState(data.listColors());
+  const [listGender, setListGender] = React.useState(data.listGender());
+  const [execute, setExecute] = React.useState(data.listAll());
 
   React.useEffect(() => {
-    if (listColors.includes(select)) {
-      setExecute(data.filterColor());
+    if (select) {
+      if (params !== 2) {
+        setExecute(data.filterColor());
+      } else {
+        setExecute(data.filterGender());
+      }
     } else {
       setExecute(data.listAll());
       setSelect(null);
     }
-  }, [setSelect, select, data, listColors]);
+
+    // if (listColors.includes(select) && params === 1) {
+    //   setExecute(data.filterColor());
+    // } else if (listGender.includes(select) && params === 2) {
+    //   setExecute(data.filterGender());
+    // } else {
+    //   setExecute(data.listAll());
+    //   setSelect(null);
+    // }
+  }, [params, setParams, data, select, setSelect, setExecute]);
 
   return (
     <ul className="products">
