@@ -8,7 +8,16 @@
   --gray-2: #808185;
   --color-1: #cc0d1f;
   --color-2: #f36324;
-  --color-3: #28a3aa;
+  --color-3: #80bdb8;
+  --color-4: #319990;
+  --color-Preta: #1c1619;
+  --color-Laranja: #f36324;
+  --color-Amarela: #ffd600;
+  --color-Cinza: #cecece;
+  --color-Azul: #0061f3;
+  --color-Preto: #000;
+  --color-Bege: #ffe0d3;
+  --color-Rosa: #ff0099;
   --grid-size: 1fr minmax(320px, 1024px) 1fr;
 }
 * {
@@ -226,15 +235,37 @@ h3.filter-subtitle {
 }
 .color-pick {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   gap: 2px;
 }
 .color-pick li {
-  width: 33.33%;
+  width: 4rem;
   height: 3rem;
-  background-color: var(--color-1);
+  cursor: pointer;
 }
+
 .color-pick li:hover {
+  border: 2px solid var(--gray-1);
+}
+.gender {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2px;
+}
+.gender li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 5rem;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: var(--color-bege);
+}
+
+.gender li:hover {
   border: 2px solid var(--gray-1);
 }
 /* PRODUCTS ........................................ */
@@ -248,7 +279,10 @@ h3.filter-subtitle {
   text-align: center;
   text-transform: uppercase;
   width: 16rem;
-  height: 35rem;
+  height: 32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .product-img {
@@ -257,10 +291,24 @@ h3.filter-subtitle {
   border: 1px solid var(--gray-1);
 }
 .product-title {
+  color: var(--gray-2);
   margin: 1rem;
   line-height: 2rem;
   display: inline-block;
   word-wrap: break-word;
+}
+.product-price {
+  font-weight: 700;
+  color: var(--red);
+}
+button.product-buy {
+  border-radius: 0.6rem;
+  color: var(--clean);
+  width: 100%;
+  background-color: var(--color-3);
+}
+button.product-buy:hover {
+  background-color: var(--color-4);
 }
 /* BREADCRUMBS (NAVIGATION INFO) ........................................ */
 .navigation {
