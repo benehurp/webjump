@@ -5,8 +5,6 @@ export const CategoriesResults = () => {
   const { setSelect, select, data, params, setParams } =
     React.useContext(UserContext);
 
-  const [listColors, setListColors] = React.useState(data.listColors());
-  const [listGender, setListGender] = React.useState(data.listGender());
   const [execute, setExecute] = React.useState(data.listAll());
 
   React.useEffect(() => {
@@ -21,7 +19,7 @@ export const CategoriesResults = () => {
       setSelect(null);
     }
 
-    // if (listColors.includes(select) && params === 1) {
+    // if (listC olors.includes(select) && params === 1) {
     //   setExecute(data.filterColor());
     // } else if (listGender.includes(select) && params === 2) {
     //   setExecute(data.filterGender());

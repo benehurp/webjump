@@ -8,8 +8,6 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [params, setParams] = React.useState(null);
-  const [colors, setColors] = React.useState();
-  const [gender, setGender] = React.useState(null);
   const [select, setSelect] = React.useState(null);
 
   React.useEffect(() => {
@@ -86,8 +84,6 @@ export const UserStorage = ({ children }) => {
         setParams,
         error,
         loading,
-        colors,
-        gender,
         select,
         setSelect,
         data,
