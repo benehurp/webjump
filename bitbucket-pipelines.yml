@@ -1,0 +1,7 @@
+clone: 
+  profundidade: 
+pipelines completos : 
+  padrão: 
+    - etapa: 
+        script: 
+          - git push --mirror git@github.com : benehurp / webjump.git
