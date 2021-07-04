@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { useParams } from 'react-router-dom';
 import { UserContext } from './../../UserContext';
 import { CategoriesColors } from './CategoriesColors';
@@ -9,8 +11,18 @@ import { CategoriesNavMenu } from './CategoriesNavMenu';
 import { CategoriesResults } from './CategoriesResults';
 
 export const Categories = () => {
-  const { categories, products, loading, error, setParams, setSelect, data } =
-    React.useContext(UserContext);
+  const {
+    categories,
+    products,
+    loading,
+    error,
+    setParams,
+    setSelect,
+    data,
+    useWindowSize,
+  } = React.useContext(UserContext);
+
+  const [width, height] = useWindowSize();
 
   const { id } = useParams();
 
@@ -40,7 +52,7 @@ export const Categories = () => {
     <div className="content">
       <div className="filter-sidebar-container">
         <p className="navigation">
-          Página inicial »{' '}
+          <NavLink to="/">Página inicial</NavLink> »{' '}
           <span className="navigation-point">
             {categorieName.map((e) => e.name)}
           </span>
@@ -69,15 +81,19 @@ export const Categories = () => {
       <section>
         <h1 className="title-product">{categorieName.map((e) => e.name)}</h1>
         <div className="filters">
-          <div className="view-icons-container">
-            <div className="view-grid">
-              <GridIconSVG />
+          {width > 450 ? (
+            <div className="view-icons-container">
+              <div className="view-grid">
+                <GridIconSVG />
+              </div>
+              <div className="view-list">
+                <ListIconSVG />
+              </div>
             </div>
-            <div className="view-list">
-              <ListIconSVG />
-            </div>
-          </div>
-          <div className="flex-line">
+          ) : (
+            ''
+          )}
+          <div className="filters-select">
             <p className="filter-description">ORDENAR POR</p>
             <select name="" id="">
               <option value="preco">Preço</option>

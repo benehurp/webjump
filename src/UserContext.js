@@ -35,6 +35,13 @@ export const UserStorage = ({ children }) => {
         return categories.items.filter((item) => item.id === params);
       }
     },
+    filterGender: () => {
+      if (products) {
+        return products.items
+          .filter(({ filter: [{ gender }] }) => gender === select)
+          .map((gender) => gender);
+      }
+    },
     listColors: () => {
       if (products) {
         return products.items
@@ -49,13 +56,6 @@ export const UserStorage = ({ children }) => {
           .map((color) => color);
       }
     },
-    filterGender: () => {
-      if (products) {
-        return products.items
-          .filter(({ filter: [{ gender }] }) => gender === select)
-          .map((gender) => gender);
-      }
-    },
     listGender: () => {
       if (products) {
         return products.items
@@ -68,12 +68,20 @@ export const UserStorage = ({ children }) => {
         return products.items.filter((items) => items);
       }
     },
-    listAll2: () => {
-      if (products) {
-        return products.items.filter((items) => items);
-      }
-    },
   };
+
+  function useWindowSize() {
+    const [size, setSize] = React.useState([0, 0]);
+    React.useLayoutEffect(() => {
+      function updateSize() {
+        setSize([window.innerWidth, window.innerHeight]);
+      }
+      window.addEventListener('resize', updateSize);
+      updateSize();
+      return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return size;
+  }
 
   return (
     <UserContext.Provider
@@ -87,6 +95,7 @@ export const UserStorage = ({ children }) => {
         select,
         setSelect,
         data,
+        useWindowSize,
       }}
     >
       {children}
