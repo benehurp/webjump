@@ -22,7 +22,7 @@ export const Categories = () => {
     useWindowSize,
   } = React.useContext(UserContext);
 
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   const { id } = useParams();
 
@@ -81,7 +81,7 @@ export const Categories = () => {
       <section>
         <h1 className="title-product">{categorieName.map((e) => e.name)}</h1>
         <div className="filters">
-          {width > 450 ? (
+          {width > 680 ? (
             <div className="view-icons-container">
               <div className="view-grid">
                 <GridIconSVG />

@@ -11,7 +11,7 @@ import { NavMenu } from '../NavMenu/NavMenu';
 export const Header = () => {
   const { useWindowSize } = React.useContext(UserContext);
 
-  const [width, height] = useWindowSize();
+  const [width] = useWindowSize();
 
   return (
     <header>
@@ -29,13 +29,13 @@ export const Header = () => {
           </div>
         </div>
         <div className="header-content">
-          {width < 768 ? (
+          {width < 680 ? (
             [<HeaderMenuIconSVG />, <HeaderLogo />]
           ) : (
             <HeaderLogo />
           )}
 
-          {width < 768 ? <HeaderSearchIconSVG /> : <SearchBar />}
+          {width < 680 ? <HeaderSearchIconSVG /> : <SearchBar />}
         </div>
       </div>
       <div className="menu-header-container">

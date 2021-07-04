@@ -299,23 +299,23 @@ h3.filter-subtitle {
 /* PRODUCTS ........................................ */
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 16rem);
+  grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
   gap: 6rem 2rem;
   justify-content: space-between;
 }
 .products li {
   text-align: center;
   text-transform: uppercase;
-  width: 16rem;
-  height: 30rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .product-img {
-  width: 16rem;
-  height: 18rem;
+  height: 50%;
+  padding: 1rem;
+  object-fit: contain;
+  display: block;
   border: 1px solid var(--gray-1);
 }
 .product-title {
@@ -326,6 +326,7 @@ h3.filter-subtitle {
   word-wrap: break-word;
 }
 .product-price {
+  margin-top: 0.5rem;
   font-weight: 700;
   color: var(--red);
   display: flex;
@@ -341,6 +342,7 @@ h3.filter-subtitle {
   bottom: 5px;
 }
 button.product-buy {
+  margin-top: 2rem;
   border-radius: 0.6rem;
   color: var(--clean);
   width: 100%;
@@ -383,39 +385,12 @@ footer {
   background-color: var(--red);
 }
 
-@media only screen and (max-width: 1024) {
-  .products {
-    grid-template-columns: repeat(auto-fill, 15rem);
-    gap: 6rem 2rem;
-  }
-  .products li {
-    width: 15rem;
-    height: 25rem;
-  }
-
-  .product-img {
-    width: 15rem;
-    height: 15rem;
-  }
-}
-
 @media only screen and (max-width: 768px) {
   .products {
-    grid-template-columns: repeat(auto-fill, 13rem);
-    gap: 6rem 1rem;
-  }
-  .products li {
-    width: 13rem;
-    height: 25rem;
-  }
-
-  .product-img {
-    width: 13rem;
-    height: 13rem;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
   }
 }
-
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 680px) {
   .header-content {
     padding: 0 2rem;
     height: 8rem;
@@ -451,20 +426,6 @@ footer {
   .menu-sidebar {
     display: none;
   }
-  .products {
-    grid-template-columns: repeat(auto-fill, 13rem);
-    gap: 6rem 1rem;
-  }
-  .products li {
-    width: 13rem;
-    height: 25rem;
-  }
-
-  .product-img {
-    width: 13rem;
-    height: 13rem;
-  }
-
   .content {
     flex-direction: column;
   }
@@ -476,5 +437,11 @@ footer {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .products {
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
   }
 }
