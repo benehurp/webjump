@@ -1,6 +1,8 @@
 Nesse desafio o objetivo era criar um layout totalmente responsivo e dar funcionalidade para os filtros de produtos e listar os produtos em páginas enumeradas.
 
-Obs: O site não é estátco e os dados das áreas de menu foram geradas consumindo a API. Do mesmo modo as cores e gêneros na área de filtros.
+Obs1: O site não é estátco e os dados das áreas de menu foram geradas consumindo a API. Do mesmo modo as cores e gêneros na área de filtros.
+
+Obs2: Eu estava decidido em começar o projeto em usando Styled Components, mas devido ao tempo acabei deixando o CSS puro. mesmo assim trabalhei com uma organização sistemática da estrutura.
 
 Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6.
 
