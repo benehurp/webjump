@@ -1,129 +1,52 @@
-# Quer ser desenvolvedor frontend na Webjump?
+Nesse desafio o objetivo era criar um layout totalmente responsivo e dar funcionalidade para os filtros de produtos e listar os produtos em páginas enumeradas.
 
-Criamos este teste para avaliar seus conhecimentos e habilidades frontend (HTML, CSS e JavaScript).
+Obs: O site não é estátco e os dados das áreas de menu foram geradas consumindo a API. Do mesmo modo as cores e gêneros na área de filtros.
 
-## O teste
+Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6.
 
-O desafio é tornar o layout abaixo em uma página funcional.  
-Não existe certo ou errado, queremos ver como você se sai em situações reais, como este desafio.  
-O tempo necessário para completar o desafio dependerá da sua experiência e ferramentas escolhidas.
+DEMO: https://assessment-frontend-flax.vercel.app/
 
-Portanto, dê o seu melhor!
+# Ferramentas de Desenvolvimento
 
-:warning: **OBS:** Os layouts podem ser encontrados na pasta **layout**
+- VS Studio Code
+- Assets extraídos através do Figma.
+- Ferramenta de build: Webpack
+- Gerenciador de pacotes: NPM/Yarn
+- Lib/Framework JS: React.js v17.0.2
+- Linguagem de marcação: JSX/HTML5
+- Servidor: Node.js v16.4.0
 
-![Layout](public/assets/preview.jpg)
+# Tecnologias e conceitos
 
-## Instruções
+**API**
 
-- Os arquivos do layout estão no diretório assets deste repositório
-- O conteúdo não é estático. Você deve criar um JavaScript para consultar a lista de categorias a serem exibidas no menu e também para exibir os produtos das categorias.  
-  Os dados serão fornecidos por uma API. As instruções estão mais abaixo.
-- Fonte padrão: "Open Sans"
-- Fonte do menu e botão de busca: "Open Sans - Extrabold"
-- As imagens dos produtos estão no diretório public/media
-- Você pode utilizar as tecnologias e bibliotecas que achar melhor (frameworks ou bibliotecas JS / CSS)
-- Crie uma documentação simples comentando sobre as tecnologias e soluções adotadas
-- Se necessário explique também como rodar o seu projeto
+- Mock importado como JSON
 
-## Requisitos
+**REACT**
 
-- Design responsivo nos breakpoints 320px, 768px, 1024px e 1440px
-- Suporte para IE, Chrome, Safari, Firefox
-- Semântica
+- React Router Dom
+- React Navigation
 
-## Diferenciais
+**CSS**
 
-- Uso de pré-processadores CSS (Sass, Less)
-- Acessibilidade
-- SEO
-- Performance
-- Fazer os filtros da sidebar funcionarem através de Javascript
-- Utilizar alguma automatização (Grunt, Gulp, ...)
+- Animações utilizando keyframes
+- CSS Grid para estruturas externas
+- CSS Flexbox para estruturas internas
+- Não foi utilizado nenhum Framework CSS
+- Mixins para breakpoints de media queries
+- Variáveis para cores
+- Uso de object-fit para evitar quebras de layout em imagens com tamanhos diferentes retornadas da API
 
-## O que será avaliado
+**HTML**
 
-- Estrutura e organização do código e dos arquivos
-- Soluções adotadas
-- Tecnologias utilizadas
-- Qualidade
-- Fidelidade ao layout
-- Enfim, tudo será observado e levado em conta
+- SEO através de metatags e semântica
+- Acessibilidade através de semântica e atributos que auxiliam tags
 
-## Como iniciar o desenvolvimento
+**JAVASCRIPT**
 
-- Instale o [npm](https://nodejs.org/en/download/)
-- Fork este repositório na sua conta do Bitbucket
-- Crie uma branch com o nome **desafio**
-- Instale as dependências
+- Filters e Map em arrays para geração da lista de produtos com base na API
 
-```
-npm install
-```
+# Instruções para rodar o projeto
 
-- Rode a aplicação
-
-```
-npm start
-```
-
-- Acesse http://localhost:8888
-- Realize o desenvolvimento na pasta public
-
-## Como enviar seu teste
-
-- Envie um email para [carreira@webjump.com.br] com o link do seu repositório
-
-- Se o seu repositório for privado, solicite os emails das pessoas responsáveis para conceder acesso de leitura ao seu repositório.
-
-## API
-
-- Categorias: http://localhost:8888/api/V1/categories/list  
-  O endpoint de categoria deve ser utilizado para montar o menu do cabeçalho.
-
-**Response**
-
-```
-{
-  "items": [
-    {
-      "id": 1,
-      "name": "Camisetas",
-      "path": "camisetas"
-    },
-    ...
-  ]
-}
-```
-
-- Produtos da Categoria: http://localhost:8888/api/V1/categories/{id}  
-  O endpoint de produtos da categoria deve ser consumido para listar os produtos da categoria quando o usuário clicar em um dos menus.
-
-**Response**
-
-```
-{
-  "filters": [
-      {
-          "color": "Cor"
-      }
-  ],
-  "items": [
-    {
-      "id": 31,
-      "sku": "sku-31",
-      "path": "tenis-preto-couro",
-      "name": "Tênis Preto Couro",
-      "image": "media/shoes-1.jpg",
-      "price": 129.9,
-      "specialPrice": 80, //Optional
-      "filter": [
-        {
-          "color": "Preta"
-        }
-      ]
-    },
-    ...
-  ]
-}
-```
+- `npm install` para instalar as dependências necessárias
+- `npm start` para rodar o projeto em servidor local
