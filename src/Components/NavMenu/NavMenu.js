@@ -11,6 +11,7 @@ export const NavMenu = ({ className, activeClassName }) => {
     <nav className={className}>
       <ul>
         <NavMenuItems
+          key="pagina-inicial"
           name="Página Inicial"
           path="/"
           activeClassName={activeClassName}
@@ -24,6 +25,7 @@ export const NavMenu = ({ className, activeClassName }) => {
           />
         ))}
         <NavMenuItems
+          key="contato"
           name="Contato"
           path="/contato"
           activeClassName={activeClassName}

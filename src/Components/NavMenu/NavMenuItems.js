@@ -1,10 +1,30 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-export const NavMenuItems = ({ name, path, className, activeClassName }) => {
+import { UserContext } from './../../UserContext';
+
+export const NavMenuItems = ({
+  name,
+  path,
+  id,
+  className,
+  activeClassName,
+}) => {
+  const { setOpenMenu, useWindowSize } = React.useContext(UserContext);
+
+  const [width] = useWindowSize();
+
   return (
     <NavLink end to={path} activeClassName={activeClassName}>
-      <li className={className}>{name}</li>
+      {width < 680 ? (
+        <li key={id} className={className} onClick={() => setOpenMenu(false)}>
+          {name}
+        </li>
+      ) : (
+        <li key={id} className={className}>
+          {name}
+        </li>
+      )}
     </NavLink>
   );
 };

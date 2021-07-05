@@ -5,11 +5,13 @@ import { UserContext } from './../../UserContext';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderSearchIconSVG } from './HeaderSearchIconSVG';
 import { HeaderMenuIconSVG } from './HeaderMenuIconSVG';
+import { HeaderMobileMenu } from './HeaderMobileMenu';
 import { SearchBar } from './../SearchBar';
 import { NavMenu } from '../NavMenu/NavMenu';
 
 export const Header = () => {
-  const { useWindowSize } = React.useContext(UserContext);
+  const { useWindowSize, openMenu, setOpenMenu } =
+    React.useContext(UserContext);
 
   const [width] = useWindowSize();
 
@@ -30,12 +32,20 @@ export const Header = () => {
         </div>
         <div className="header-content">
           {width < 680 ? (
-            [<HeaderMenuIconSVG />, <HeaderLogo />]
+            <>
+              <div className="menu-icon" onClick={() => setOpenMenu(!openMenu)}>
+                <HeaderMenuIconSVG key="2" />
+              </div>
+              {openMenu && <HeaderMobileMenu />}
+              <HeaderLogo key="3" />
+              <HeaderSearchIconSVG key="4" />
+            </>
           ) : (
-            <HeaderLogo />
+            <>
+              <HeaderLogo key="1" />
+              <SearchBar key="2" />
+            </>
           )}
-
-          {width < 680 ? <HeaderSearchIconSVG /> : <SearchBar />}
         </div>
       </div>
       <div className="menu-header-container">

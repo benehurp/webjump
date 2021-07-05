@@ -3,7 +3,7 @@ import { MenuSidebar } from '../../Components/MenuSidebar/MenuSidebar';
 
 export const Home = () => {
   return (
-    <div className="content">
+    <div className="animeRigth content">
       <MenuSidebar />
       <section>
         <div className="banner"></div>

@@ -9,6 +9,7 @@ export const UserStorage = ({ children }) => {
   const [loading, setLoading] = React.useState(false);
   const [params, setParams] = React.useState(null);
   const [select, setSelect] = React.useState(null);
+  const [openMenu, setOpenMenu] = React.useState(false);
 
   React.useEffect(() => {
     async function apiFetch(url1, url2) {
@@ -96,6 +97,8 @@ export const UserStorage = ({ children }) => {
         setSelect,
         data,
         useWindowSize,
+        openMenu,
+        setOpenMenu,
       }}
     >
       {children}

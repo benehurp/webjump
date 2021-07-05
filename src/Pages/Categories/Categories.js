@@ -5,8 +5,7 @@ import { useParams } from 'react-router-dom';
 import { UserContext } from './../../UserContext';
 import { CategoriesColors } from './CategoriesColors';
 import { CategoriesGender } from './CategoriesGender';
-import { GridIconSVG } from './CategoriesIcons/GridIconSVG';
-import { ListIconSVG } from './CategoriesIcons/ListIconSVG';
+import { CategoriesGridViews } from './CategoriesGridViews';
 import { CategoriesNavMenu } from './CategoriesNavMenu';
 import { CategoriesResults } from './CategoriesResults';
 
@@ -23,7 +22,6 @@ export const Categories = () => {
   } = React.useContext(UserContext);
 
   const [width] = useWindowSize();
-
   const { id } = useParams();
 
   const idApi = parseInt(
@@ -49,7 +47,7 @@ export const Categories = () => {
   if (products === null) return null;
 
   return (
-    <div className="content">
+    <div className="animeRigth content">
       <div className="filter-sidebar-container">
         <p className="navigation">
           <NavLink to="/">Página inicial</NavLink> »{' '}
@@ -57,12 +55,10 @@ export const Categories = () => {
             {categorieName.map((e) => e.name)}
           </span>
         </p>
-        <div className="filter-sidebar">
+        <div className="animeRigth filter-sidebar">
           <h2 className="filter-title">FILTRE POR</h2>
           <h3 className="filter-subtitle">CATEGORIAS</h3>
-          <ul>
-            <CategoriesNavMenu />
-          </ul>
+          <CategoriesNavMenu />
           {idApi !== 2 ? (
             <CategoriesColors title="Cores" className="color-pick" />
           ) : (
@@ -71,28 +67,25 @@ export const Categories = () => {
 
           <h3 className="filter-subtitle">Tipo</h3>
           <ul>
-            <li className="filter-list-categories">Corrida</li>
-            <li className="filter-list-categories">Caminhada</li>
-            <li className="filter-list-categories">Casual</li>
-            <li className="filter-list-categories">Social</li>
+            <li key="0" className="filter-list-categories">
+              Corrida
+            </li>
+            <li key="1" className="filter-list-categories">
+              Caminhada
+            </li>
+            <li key="2" className="filter-list-categories">
+              Casual
+            </li>
+            <li key="3" className="filter-list-categories">
+              Social
+            </li>
           </ul>
         </div>
       </div>
       <section>
         <h1 className="title-product">{categorieName.map((e) => e.name)}</h1>
-        <div className="filters">
-          {width > 680 ? (
-            <div className="view-icons-container">
-              <div className="view-grid">
-                <GridIconSVG />
-              </div>
-              <div className="view-list">
-                <ListIconSVG />
-              </div>
-            </div>
-          ) : (
-            ''
-          )}
+        <div className="animeRigth filters">
+          {width > 680 ? <CategoriesGridViews /> : ''}
           <div className="filters-select">
             <p className="filter-description">ORDENAR POR</p>
             <select name="" id="">
