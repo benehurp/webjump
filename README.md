@@ -28,6 +28,7 @@ DEMO: https://assessment-frontend-flax.vercel.app/
 
 - React Router Dom
 - React Navigation
+- SVG: Fiz uso de imagens vetoriais e fiz manipulação dentro do react.
 
 **CSS**
 
