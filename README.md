@@ -2,9 +2,9 @@ Nesse desafio o objetivo era criar um layout totalmente responsivo e dar funcion
 
 Obs1: O site não é estátco e os dados das áreas de menu foram geradas consumindo a API. Do mesmo modo as cores e gêneros na área de filtros.
 
-Obs2: Eu estava decidido em começar o projeto em usando Styled Components, mas devido ao tempo acabei deixando o CSS puro. mesmo assim trabalhei com uma organização sistemática da estrutura.
+Obs2: Eu estava decidido em criar o projeto usando Styled Components, mas devido ao tempo acabei deixando o CSS puro. Mesmo assim trabalhei com uma organização sistemática.
 
-Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6.
+Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6, também criei tudo em inglês para manter as boas práticas.
 
 DEMO: https://assessment-frontend-flax.vercel.app/
 
