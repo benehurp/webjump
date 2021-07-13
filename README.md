@@ -8,6 +8,8 @@ Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6, também criei tudo em in
 
 DEMO: https://assessment-frontend-flax.vercel.app/
 
+![Layout](public/assets/preview.jpg)
+
 # Ferramentas de Desenvolvimento
 
 - VS Studio Code
