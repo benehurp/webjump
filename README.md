@@ -1,4 +1,4 @@
-Nesse desafio o objetivo era criar um layout totalmente responsivo e dar funcionalidade para os filtros de produtos e listar os produtos em páginas enumeradas.
+Nesse desafio o objetivo era criar um layout totalmente responsivo, dar funcionalidade para os filtros de produtos e listar os produtos em páginas enumeradas.
 
 Obs1: O site não é estátco e os dados das áreas de menu foram geradas consumindo a API. Do mesmo modo as cores e gêneros na área de filtros.
 
