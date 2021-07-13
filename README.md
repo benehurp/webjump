@@ -6,7 +6,7 @@ Obs2: Eu estava decidido em criar o projeto usando Styled Components, mas devido
 
 Eu trabalhei com o React, CSS3, HTML5 e JavaScript ES6, também criei tudo em inglês para manter as boas práticas.
 
-DEMO: https://assessment-frontend-flax.vercel.app/
+https://webjump.vercel.app/
 
 ![Layout](public/assets/preview.jpg)
 
